@@ -14,6 +14,7 @@ function convertirTiempoSeg() {
   function botonConvertir() {
     const convertir = convertirSeg(tiempoEnSeg);
     setconvertir(convertir);
+    console.log(convertir);
   }
 
   return (

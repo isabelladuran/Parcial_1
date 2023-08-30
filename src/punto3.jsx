@@ -17,6 +17,7 @@ function SaludoHora() {
 
   function handleSaludoClick() {
     const saludo = obtenerSaludo(hora);
+    console.log(saludo);
     alert(saludo);
   }
 

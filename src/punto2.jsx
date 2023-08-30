@@ -4,12 +4,12 @@ function calcularPago() {
   const [duracion, setduracion] = useState(0);
   const [precio, setprecio] = useState(null);
 
-  function calcularPrecio(minutos) {
+  function calcularPrecio(duracion) {
     let coste = 0;
-    if (minutos <= 3) {
+    if (duracion < 3) {
       coste = 100;
     } else {
-      coste = 100 + (minutos - 3) * 50;
+      coste = 100 + (duracion - 3) * 50;
     }
     return coste;
   }
@@ -17,6 +17,7 @@ function calcularPago() {
   function botonCalcular() {
     const precio = calcularPrecio(duracion);
     setprecio(precio);
+    console.log("Total coste: $" + precio + " pesos");
   }
 
   return (
@@ -29,10 +30,10 @@ function calcularPago() {
       </label>
       <br></br> 
       <button onClick={botonCalcular}>Calcular coste</button>
-      {precio && <div>Total coste: {precio} pesos</div>}
+      {precio && (<div>Total coste: ${precio} pesos</div>)}
       <br></br> 
     </div>
   );
-}
+} 
 
 export default calcularPago;
